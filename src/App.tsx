@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.scss";
+import s from "./UI/Modal/Modal.module.scss";
+import { useModal } from "./hooks/useModal";
+import Modal from "./UI/Modal";
 
 function App() {
+  const { isVisible, hideModal, showModal } = useModal();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className={s.openModalBtn} onClick={showModal}>
+        ✨ Открыть окно
+      </button>
+      <Modal isVisible={isVisible} hideModal={hideModal}>
+        asdasd
+        <img src="https://media2.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" />
+      </Modal>
     </div>
   );
 }
