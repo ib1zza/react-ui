@@ -1,0 +1,10 @@
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-size: 20px;
+}
+
+.menuItemSelected {
+  color: #ff0000;
+}
